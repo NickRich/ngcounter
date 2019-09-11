@@ -1,0 +1,11 @@
+.detail {
+    text-align: center;
+    border: 1px solid black;
+    width: 10%;
+}
+
+button {
+    background-color: blue;
+    width: 100%;
+    border-radius: 5%;
+}
