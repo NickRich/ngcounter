@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CounterListComponent } from './counter-list.component';
+import { CounterDetailComponent } from '../counter-detail/counter-detail.component';
 
 describe('CounterListComponent', () => {
   let component: CounterListComponent;
