@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { element } from '@angular/core/src/render3';
 
 @Component({
@@ -7,23 +7,23 @@ import { element } from '@angular/core/src/render3';
   styleUrls: ['./counter-detail.component.css']
 })
 export class CounterDetailComponent implements OnInit {
-  count: number;
+   count: number;
+  @Output() valueChanged = new EventEmitter();
   constructor() { 
     this.count = 0;
   }
 
   add() {
     this.count++;
+    this.valueChanged.emit(1);
+    
   }
   subtract() {
     if (this.count > 0) {
       this.count--;
+      this.valueChanged.emit(-1);
     }
     
-  }
-  getCount() {
-    console.log(this.count)
-    return this.count;
   }
 
   checkDisabled() {

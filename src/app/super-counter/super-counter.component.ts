@@ -7,23 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SuperCounterComponent implements OnInit {
   @Input() count: number;
+  actualCount: number;
   constructor() {
-    this.count = 0;
-   }
+  }
    add() {
-    this.count += 3;
+    this.actualCount += 3;
   }
   subtract() {
-    if (this.count > 0) {
-      this.count -= 3;
+    if (this.actualCount > 0) {
+      this.actualCount -= 3;
     }
     
   }
 
   checkDisabled() {
-    return this.count == 0;
+    return this.actualCount == 0;
   }
   ngOnInit() {
+    this.actualCount = this.count;
   }
 
 }

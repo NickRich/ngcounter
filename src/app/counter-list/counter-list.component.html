@@ -7,9 +7,9 @@
     <app-super-duper-counter></app-super-duper-counter>
   </div>
   <div *ngFor="let sc of superCounters">
-    <app-super-counter></app-super-counter>
+    <app-super-counter [count] = "sum"></app-super-counter>
   </div>
   <div *ngFor="let c of counters">
-    <app-counter-detail></app-counter-detail>
+    <app-counter-detail (valueChanged)="updateSum($event)"></app-counter-detail>
   </div>
 </div>
