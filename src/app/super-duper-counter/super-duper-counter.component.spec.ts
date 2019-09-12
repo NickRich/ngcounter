@@ -22,4 +22,11 @@ describe('SuperDuperCounterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should start at 0', () => {
+    expect(component.count).toBe(0);
+  });
+  it('should increment by 1', () => {
+    component.increment()
+    expect(component.count).toBe(1);
+  })
 });

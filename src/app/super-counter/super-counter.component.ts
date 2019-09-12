@@ -16,6 +16,9 @@ export class SuperCounterComponent implements OnInit {
   subtract() {
     if (this.actualCount > 0) {
       this.actualCount -= 3;
+    } 
+    if (this.actualCount < 0){
+      this.actualCount = 0;
     }
     
   }

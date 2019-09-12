@@ -3,7 +3,7 @@ import { CounterDetailComponent } from "../counter-detail/counter-detail.compone
 import { SuperCounterComponent } from "../super-counter/super-counter.component";
 import { SuperDuperCounterComponent } from "../super-duper-counter/super-duper-counter.component";
 import { ColossalCounterComponent } from "../colossal-counter/colossal-counter.component";
-
+import { StatsComponentComponent } from '../stats-component/stats-component.component';
 @Component({
   selector: "app-counter-list",
   templateUrl: "./counter-list.component.html",
@@ -14,6 +14,7 @@ export class CounterListComponent implements OnInit {
   superCounters: SuperCounterComponent[];
   superDuperCounters: SuperDuperCounterComponent[];
   colossalCounters: ColossalCounterComponent[];
+  
   sum: number;
   constructor() {
     this.counters = [];
@@ -34,6 +35,7 @@ export class CounterListComponent implements OnInit {
     }
   }
   createSuperCounter() {
+    this.playAudio();
     if (this.superCounters.length === 3) {
       this.createSuperDuperCounter();
       this.superCounters = [];
@@ -54,7 +56,14 @@ export class CounterListComponent implements OnInit {
   }
   updateSum(event) {
     this.sum += event;
-    console.log(this.sum);
   }
-  ngOnInit() {}
+  playAudio(){
+    let audio = new Audio();
+    audio.src = "../assets/swvader04.wav";
+    audio.load();
+    audio.play();
+  }
+
+  ngOnInit() {
+  }
 }
