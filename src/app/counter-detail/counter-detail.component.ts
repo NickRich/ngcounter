@@ -21,6 +21,10 @@ export class CounterDetailComponent implements OnInit {
     }
     
   }
+  getCount() {
+    console.log(this.count)
+    return this.count;
+  }
 
   checkDisabled() {
     return this.count == 0;

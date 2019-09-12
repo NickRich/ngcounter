@@ -1,5 +1,8 @@
 <button type="button" (click)="createCounter()">Create Counter</button>
 <div class="container">
+  <div *ngFor="let cc of colossalCounters">
+    <app-colossal-counter></app-colossal-counter>
+  </div>
   <div *ngFor="let sdc of superDuperCounters">
     <app-super-duper-counter></app-super-duper-counter>
   </div>
